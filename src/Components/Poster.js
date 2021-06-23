@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import noPoster from "assets/noPosterSmall.png";
+import Star from "./Star";
 
 const Container = styled.div`
   font-size: 12px;
@@ -62,7 +63,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
         />
         <Rating>
           <span role="img" aria-label="rating">
-            ⭐️
+            <Star rating={rating / 2} />
           </span>{" "}
           {rating}/10
         </Rating>
