@@ -6,7 +6,7 @@ import noPoster from "assets/noPosterSmall.png";
 import Star from "./Star";
 
 const Container = styled.div`
-  font-size: 12px;
+  font-size: 15px;
 `;
 
 const Image = styled.div`
