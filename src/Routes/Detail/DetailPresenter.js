@@ -44,12 +44,16 @@ const Cover = styled.div`
 `;
 
 const Data = styled.div`
+  margin-top: 15%;
   width: 70%;
-  margin-left: 10px;
+  margin-left: 30px;
 `;
 
 const Title = styled.span`
   font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 `;
 
 const ItemContainer = styled.div`
@@ -63,10 +67,11 @@ const Divider = styled.span`
 `;
 
 const Overview = styled.p`
-  font-size: 12px;
+  font-size: 15px;
   opacity: 0.7;
   line-height: 1.5;
   width: 50%;
+  letter-spacing: 1px;
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>
