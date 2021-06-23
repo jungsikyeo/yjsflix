@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Loader from "Components/Loader";
 import noPoster from "assets/noPosterSmall.png";
 import { Helmet } from "react-helmet";
+import Star from "../../Components/Star";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -109,22 +110,29 @@ const DetailPresenter = ({ result, loading, error }) =>
           </Title>
           <ItemContainer>
             <Item>
-              {result.release_date
-                ? result.release_date.substring(0, 4)
-                : result.first_air_date.substring(0, 4)}
-            </Item>
-            <Divider>•</Divider>
-            <Item>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} min
-            </Item>
-            <Divider>•</Divider>
-            <Item>
               {result.genres &&
                 result.genres.map((genre, index) =>
                   index === result.genres.length - 1
                     ? genre.name
                     : `${genre.name} / `
                 )}
+            </Item>
+            <Divider>•</Divider>
+            <Item>
+              📅
+              {result.release_date
+                ? result.release_date.substring(0, 4)
+                : result.first_air_date.substring(0, 4)}
+            </Item>
+            <Divider>•</Divider>
+            <Item>
+              ⏱{result.runtime ? result.runtime : result.episode_run_time[0]}{" "}
+              min
+            </Item>
+            <Divider>•</Divider>
+            <Item>
+              <Star rating={result.vote_average / 2} /> ( {result.vote_average}{" "}
+              )
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
